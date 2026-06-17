@@ -1,0 +1,12 @@
+
+Welcome to \e[1;36m@DISTRO_NAME@ \e[1;37m@VERSION@ (@CODENAME@) @BUILD_VER@ (@VERSION_TYPE@)\e[0m
+
+System information:
+  Kernel:  \s
+  Architecture:  \m
+
+Website: https://lingmo.org
+Discussions: https://github.com/orgs/LingmoOS/discussions
+
+\e[0m   \e[48;5;0m  \e[0m \e[48;5;1m  \e[0m \e[48;5;2m  \e[0m \e[48;5;3m  \e[0m \e[48;5;4m  \e[0m \e[48;5;5m  \e[0m \e[48;5;6m  \e[0m \e[48;5;7m  \e[0m \e[48;5;8m  \e[0m \e[48;5;9m  \e[0m \e[48;5;10m \e[0m \e[48;5;11m \e[0m \e[48;5;12m \e[0m \e[48;5;13m \e[0m \e[48;5;14m \e[0m \e[48;5;15m \e[0m
+     \e[38;5;0m 0 \e[0m  \e[38;5;1m 1 \e[0m  \e[38;5;2m 2 \e[0m  \e[38;5;3m 3 \e[0m  \e[38;5;4m 4 \e[0m  \e[38;5;5m 5 \e[0m  \e[38;5;6m 6 \e[0m  \e[38;5;7m 7 \e[0m  \e[38;5;8m 8 \e[0m  \e[38;5;9m 9 \e[0m \e[38;5;10mA \e[0m \e[38;5;11mB \e[0m \e[38;5;12mC \e[0m \e[38;5;13mD \e[0m \e[38;5;14mE \e[0m \e[38;5;15mF \e[0m

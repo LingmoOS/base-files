@@ -57,20 +57,12 @@ override_dh_auto_install:
 	install -p -m 644 licenses/* $(DESTDIR)/usr/share/common-licenses
 	install -p -m 644 origins/*  $(DESTDIR)/etc/dpkg/origins
 	install -p -m 644 share/*    $(DESTDIR)/usr/share/base-files
-	# Install Lingmo OS custom system/vendor files
-	install -p -m 644 system/*   $(DESTDIR)/system
-	install -p -m 644 vendor/*   $(DESTDIR)/vendor
-	# Install subdirectory info files
-	install -p -m 644 system/etc/*    $(DESTDIR)/system/etc
-	install -p -m 644 system/bin/*    $(DESTDIR)/system/bin
-	install -p -m 644 system/lib/*    $(DESTDIR)/system/lib
-	install -p -m 644 system/include/* $(DESTDIR)/system/include
-	install -p -m 644 system/share/*   $(DESTDIR)/system/share
-	install -p -m 644 vendor/etc/*     $(DESTDIR)/vendor/etc
-	install -p -m 644 vendor/bin/*     $(DESTDIR)/vendor/bin
-	install -p -m 644 vendor/lib/*     $(DESTDIR)/vendor/lib
-	install -p -m 644 vendor/firmware/*  $(DESTDIR)/vendor/firmware
-	install -p -m 644 vendor/share/*   $(DESTDIR)/vendor/share
+	# Install Lingmo OS custom system/vendor files (use cp -r for directories)
+	cp -r system/*   $(DESTDIR)/system/
+	cp -r vendor/*   $(DESTDIR)/vendor/
+	# Set proper permissions for info files
+	find $(DESTDIR)/system -type f -exec chmod 644 {} \;
+	find $(DESTDIR)/vendor -type f -exec chmod 644 {} \;
 ifeq ($(DEB_HOST_GNU_SYSTEM),gnu)
 	rmdir $(DESTDIR)/sys
 endif

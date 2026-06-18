@@ -5,12 +5,13 @@ include /usr/share/dpkg/architecture.mk
 # ========== Lingmo OS 统一版本配置（修改此处即可全局生效） ==========
 DISTRO_NAME  = Lingmo OS
 VERSION      = 5.0
-CODENAME     = Lithium          # 代号（TitleCase，用于显示）
-codename     = lithium          # 代号（小写，用于 VERSION_CODENAME）
-DEBIAN_VER   = 13.5             # Debian 基础版本
-BUILD_VER    ?= 26a01           # 内部构建版本（格式：YY[R|b|a]NN）
-VARIANT      = Desktop          # 变体（Desktop/Server 等）
-variant_id   = desktop          # 变体标识（小写）
+CODENAME     = Lithium
+codename     = lithium
+DEBIAN_VER   = 13.5
+# 内部构建版本（格式：YY[R|b|a]NN）
+BUILD_VER    ?= 26a01
+VARIANT      = Desktop
+variant_id   = desktop
 # ===================================================================
 
 OSNAME = "GNU/`uname | sed -e 's/GNU\///'`"

@@ -1,3 +1,17 @@
+base-files (1:13.9+lingmo5u1) trixie; urgency=medium
+
+  * Fix MOTD ANSI color display:
+    - Replace non-standard \e escape sequences with \033 (octal) for
+      broad shell compatibility (dash/sh/bash/zsh).
+    - Add update-motd.d/00-lingmo-motd script that uses printf '%b\n'
+      to properly interpret ANSI escape sequences on login.
+    - Add Lingmo OS ASCII art logo to motd header.
+  * Fix build: use cp -r instead of install for system/vendor directories
+    (install cannot handle directory recursion).
+  * Fix sed syntax error: remove stray quotes from DISTRO_NAME variable.
+
+ -- Lingmo OS Team <team@lingmo.org>  Thu, 18 Jun 2026 11:27:00 +0800
+
 base-files (1:13.8+lingmo5u1) trixie; urgency=medium
 
   * Rebrand to Lingmo OS:

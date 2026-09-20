@@ -7,7 +7,7 @@ DISTRO_NAME  = Lingmo OS
 VERSION      = 5.0
 CODENAME     = Lithium
 codename     = lithium
-DEBIAN_VER   = 13.5
+DEBIAN_VER   = 13.7
 # 内部构建版本（格式：YY[R|b|a]NN）
 BUILD_VER    ?= 26a01
 VARIANT      = Desktop

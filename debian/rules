@@ -23,7 +23,7 @@ ifeq ($(DEB_HOST_GNU_SYSTEM),gnu)
 endif
 
 VENDORFILE = debian
-DESTDIR = debian/base-files
+DESTDIR = debian/lingmo-base-files
 
 ifneq (,$(filter $(DEB_HOST_ARCH),amd64 loong64 mips64el ppc64 ppc64el sparc64))
   USR_MERGE_RTLDLIB = lib64

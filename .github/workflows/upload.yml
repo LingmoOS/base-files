@@ -28,6 +28,15 @@ jobs:
       # - name: Install build dependencies
       #   run: mk-build-deps -i -t "apt-get --yes" -r
 
+      # 版本号一致性门禁：与 lingmo-builder 比对（不一致则失败）
+      - name: Check system version consistency
+        run: |
+          set -e
+          git clone --depth 1 https://github.com/LingmoOS/lingmo-version.git /tmp/lingmo-version
+          git clone --depth 1 https://github.com/LingmoOS/lingmo-builder.git /tmp/lingmo-builder
+          python3 /tmp/lingmo-version/lingmo-version check \
+              --base-files "$PWD" --builder /tmp/lingmo-builder
+
       - name: Build source package
         run: |
           dpkg-buildpackage -S -us -uc -d

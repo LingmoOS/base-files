@@ -1,4 +1,4 @@
-base-files (1:13.10+lingmo5u1) trixie; urgency=medium
+base-files (1:13.10+lingmo5u2) trixie; urgency=medium
 
   * new release for Lingmo OS.
 

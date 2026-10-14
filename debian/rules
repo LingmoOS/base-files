@@ -10,6 +10,7 @@ codename     = lithium
 DEBIAN_VER   = 13.7
 # 内部构建版本（格式：YY[R|b|a]NN）
 BUILD_VER    ?= 26a01
+BUILD_TIME   = 261014204
 VARIANT      = Desktop
 variant_id   = desktop
 # ===================================================================
@@ -93,6 +94,7 @@ endif
 	    -e "s|@VARIANT@|$(VARIANT)|g" \
 	    -e "s|@variant_id@|$(variant_id)|g" \
 	    -e "s|\$$(shell date +%Y%m%d)|$(shell date +%Y%m%d)|g" \
+	    -e "s|@BUILD_TIME@|$(BUILD_TIME)|g" \
 	    > $(DESTDIR)/etc/os-release
 	sed -e "s|@DEBIAN_VER@|$(DEBIAN_VER)|g" etc/debian_version > $(DESTDIR)/etc/debian_version
 	mv $(DESTDIR)/etc/os-release $(DESTDIR)/usr/lib/os-release

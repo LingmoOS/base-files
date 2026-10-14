@@ -34,9 +34,8 @@ jobs:
           set -e
           git clone --depth 1 https://github.com/LingmoOS/lingmo-version.git /tmp/lingmo-version
           git clone --depth 1 https://github.com/LingmoOS/lingmo-builder.git /tmp/lingmo-builder
-          git clone --depth 1 https://github.com/LingmoOS/lingmo-live.git /tmp/lingmo-live
           python3 /tmp/lingmo-version/lingmo-version check \
-              --base-files "$PWD" --builder /tmp/lingmo-builder --live /tmp/lingmo-live
+              --base-files "$PWD" --builder /tmp/lingmo-builder
 
       - name: Build source package
         run: |

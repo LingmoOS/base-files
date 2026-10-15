@@ -1,3 +1,18 @@
+base-files (1:13.10+lingmo5u4) unstable; urgency=medium
+
+  * 新增空的 base-files 包，并移除 system-core 依赖
+    - 依赖歧义：dbus 等需要 base-files >= 13.4~，而 lingmo-base-files 以
+      Provides: base-files 提供该能力，加上 Debian 原有的 base-files，求解器报
+      “have choice for base-files ...: base-files lingmo-base-files”。
+      现由本源码包额外产出一个真正的 base-files 二进制包（空包，无文件），
+      它 Depends: lingmo-base-files (= ${binary:Version})：真包优先于虚拟提供者，且本包版本带 epoch（1:）
+      必然高于 Debian 的 base-files，从而唯一确定。
+    - lingmo-base-files 的 Depends 去掉 system-core（该包在 Lingmo 源中不存在，
+      会让本包不可安装）；Recommends 同步改为仅 lingmo-workspace-base。
+    - debian/base-files.dirs 清空：占位包不再声明 /proc /sys /dev 等系统目录。
+
+ -- Lingmo OS Team <team@lingmo.org>  Thu, 15 Oct 2026 21:45:24 +0800
+
 base-files (1:13.10+lingmo5u3) unstable; urgency=medium
 
   * fix: override_dh_link 等目标里使用了旧的包目录名 debian/base-files

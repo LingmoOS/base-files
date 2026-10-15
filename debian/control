@@ -12,8 +12,8 @@ Package: lingmo-base-files
 Provides: base, usr-is-merged, base-files (= ${binary:Version})
 Architecture: any
 Pre-Depends: awk
-Depends: system-core, ${misc:Depends}
-Recommends: system-core | lingmo-workspace-base
+Depends: ${misc:Depends}
+Recommends: lingmo-workspace-base
 Essential: yes
 Priority: required
 Replaces: base, miscutils, dpkg (<= 1.15.0), base-files
@@ -24,3 +24,19 @@ Description: Lingmo OS base system miscellaneous files
  several important miscellaneous files, such as /etc/debian_version,
  /etc/host.conf, /etc/issue, /etc/motd, /etc/profile, and others,
  and the text of several common licenses in use on Lingmo OS systems.
+
+Package: base-files
+Architecture: all
+Depends: lingmo-base-files (= ${binary:Version}), ${misc:Depends}
+Section: admin
+Priority: optional
+Multi-Arch: foreign
+Description: base system miscellaneous files (empty placeholder)
+ This is an intentionally empty package. The actual filesystem hierarchy and
+ miscellaneous files are shipped by lingmo-base-files.
+ .
+ It exists so that anything depending on "base-files" resolves inside the Lingmo
+ OS repository instead of pulling Debian's original base-files: a real package
+ always wins over a virtual provider, and this one carries an epoch (1:) so its
+ version sorts higher than Debian's. It depends on lingmo-base-files, so
+ installing it installs the Lingmo implementation.

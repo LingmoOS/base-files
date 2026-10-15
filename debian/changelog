@@ -1,3 +1,14 @@
+base-files (1:13.10+lingmo5u3) unstable; urgency=medium
+
+  * fix: override_dh_link 等目标里使用了旧的包目录名 debian/base-files
+    二进制包早已改名为 lingmo-base-files（DESTDIR = debian/lingmo-base-files），
+    但 debian/rules 里仍有四处引用 debian/base-files，导致
+    override_dh_link 创建 bin/lib/sbin/lib64 相对链接时目录不存在：
+      ln: failed to create symbolic link 'debian/base-files/bin': No such file or directory
+    现统一改为 debian/lingmo-base-files。
+
+ -- Lingmo OS Team <team@lingmo.org>  Thu, 15 Oct 2026 21:14:45 +0800
+
 base-files (1:13.10+lingmo5u2) trixie; urgency=medium
 
   * new release for Lingmo OS.

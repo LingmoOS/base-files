@@ -9,8 +9,8 @@ CODENAME     = Lithium
 codename     = lithium
 DEBIAN_VER   = 13.7
 # 内部构建版本（格式：YY[R|b|a]NN）
-BUILD_VER    ?= 26a14
-BUILD_TIME   = 2611155
+BUILD_VER    ?= 26a15
+BUILD_TIME   = 26111162
 VARIANT      = Desktop
 variant_id   = desktop
 # ===================================================================
